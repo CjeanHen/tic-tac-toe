@@ -38,11 +38,24 @@ const signOutFailure = error => {
   $('form').trigger('reset')
 }
 
+const changePwSuccess = response => {
+  $('#message').text('Password changed!')
+  $('form').trigger('reset')
+}
+
+const changePwFailure = error => {
+  console.log(error)
+  $('#message').text('Password could not be changed!')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
   signInFailure,
+  changePwSuccess,
+  changePwFailure,
   signOutSuccess,
   signOutFailure
 }
