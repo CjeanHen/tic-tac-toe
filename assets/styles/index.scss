@@ -25,27 +25,21 @@ p {
   border: 5px solid #140E2A
 }
 
-#auth {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-}
+#authorized {
+  display: none;
 
-#gameBoard {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  height: 500px;
-  justify-content: center;
-  margin: 10px auto;
-  width: 75%;
+  #gameBoard {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    justify-content: center;
+    margin: 10px auto;
+    visibility: hidden;
+    width: 75%;
+  }
 }
-
 
 #unauthorized {
   justify-content: center;
-}
-
-#authorized {
-  display: none;
 }

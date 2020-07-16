@@ -16,8 +16,13 @@ $(() => {
 
   $('#sign-out').on('click', authEvents.onSignOut)
 
+  $('#new-game').on('click', () => {
+    $('#gameBoard').css('visibility', 'visible')
+    $('#auth-choices').hide()
+  })
+
   // Game listeners
   $('.cells').on('click', event => {
-    $(event.target).html("<p>X</p>")
+    $(event.target).html('<h1>X</h1>')
   })
 })
