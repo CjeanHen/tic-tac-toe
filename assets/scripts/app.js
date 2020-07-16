@@ -1,5 +1,6 @@
 'use strict'
 const authEvents = require('./auth/events')
+const playEvents = require('./play')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -22,7 +23,5 @@ $(() => {
   })
 
   // Game listeners
-  $('.cells').on('click', event => {
-    $(event.target).html('<h1>X</h1>')
-  })
+  $('.cells').on('click', playEvents.onTakeTurn)
 })
