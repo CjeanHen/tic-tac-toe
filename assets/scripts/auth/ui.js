@@ -25,9 +25,24 @@ const signInFailure = error => {
   $('form').trigger('reset')
 }
 
+const signOutSuccess = response => {
+  $('#message').text('Signed out!')
+  $('form').trigger('reset')
+  $('#unauthorized').show()
+  $('#authorized').hide()
+}
+
+const signOutFailure = error => {
+  console.log(error)
+  $('#message').text('Could not sign out!')
+  $('form').trigger('reset')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  signOutSuccess,
+  signOutFailure
 }
