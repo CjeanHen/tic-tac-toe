@@ -17,10 +17,11 @@ $(() => {
 
   $('#sign-out').on('click', authEvents.onSignOut)
 
-  $('#new-game').on('click', () => {
-    $('#gameBoard').css('visibility', 'visible')
-    $('#auth-choices').hide()
-  })
+  // $('#new-game').on('click', () => {
+  //   $('#gameBoard').css('visibility', 'visible')
+  //   $('#auth-choices').hide()
+  // })
+  $('#new-game').on('click', authEvents.onNewGame)
 
   // Game listeners
   $('.cells').on('click', playEvents.onTakeTurn)

@@ -37,9 +37,22 @@ const signOut = function () {
     method: 'DELETE'
   })
 }
+
+const newGame = function () {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    body: {},
+    url: config.apiUrl + '/games',
+    method: 'POST'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePw,
-  signOut
+  signOut,
+  newGame
 }

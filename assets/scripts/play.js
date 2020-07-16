@@ -1,4 +1,5 @@
 let turn = 1
+let cells = ['','','','','','','','','','']
 
 const onTakeTurn = event => {
   if (turn % 2 === 1) {

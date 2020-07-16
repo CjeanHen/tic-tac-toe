@@ -48,6 +48,15 @@ const changePwFailure = error => {
   $('form').trigger('reset')
 }
 
+const newGameSuccess = response => {
+  $('#gameBoard').css('visibility', 'visible')
+  $('#auth-choices').hide()
+}
+
+const newGameFailure = error => {
+  $('#message').text(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -56,5 +65,7 @@ module.exports = {
   changePwSuccess,
   changePwFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  newGameSuccess,
+  newGameFailure
 }
