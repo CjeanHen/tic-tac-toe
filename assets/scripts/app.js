@@ -15,4 +15,9 @@ $(() => {
   $('#change-pw').on('submit', authEvents.onChangePw)
 
   $('#sign-out').on('click', authEvents.onSignOut)
+
+  // Game listeners
+  $('.cells').on('click', event => {
+    $(event.target).html("<p>X</p>")
+  })
 })

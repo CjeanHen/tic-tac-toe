@@ -1,5 +1,51 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  background-color: #73C094;
+}
+
+button {
+  background-color: #E24B6C;
+  color: #140E2A;
+  border-radius: 10%;
+}
+
+h1 {
+  color: #140E2A;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.cells {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  border: 5px solid #140E2A
+}
+
+#auth {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#gameBoard {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  justify-content: center;
+  margin: 10px auto;
+  width: 75%;
+}
+
+
+#unauthorized {
+  justify-content: center;
+}
+
 #authorized {
   display: none;
 }
