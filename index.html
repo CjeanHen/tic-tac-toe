@@ -32,13 +32,17 @@
         </div>
 
         <div id="authorized">
-          <form id="change-pw">
-            <input name="passwords[old]" type="password" placeholder="old password">
-            <input name="passwords[new]" type="password" placeholder="new password">
-            <button type="submit">Change password</button>
-          </form>
+          <div id="auth-choices">
+            <button id="new-game">New Game</button>
 
-          <button id="sign-out">Sign out</button>
+            <form id="change-pw">
+              <input name="passwords[old]" type="password" placeholder="old password">
+              <input name="passwords[new]" type="password" placeholder="new password">
+              <button type="submit">Change password</button>
+            </form>
+
+            <button id="sign-out">Sign out</button>
+          </div>
 
           <div id="gameBoard">
             <div class="cells" id=”topLeft0”><p> </p></div>
@@ -51,6 +55,7 @@
             <div class="cells" id=”bottomCenter7”><p> </p></div>
             <div class="cells" id=”bottomRight8”><p> </p></div>
           </div>
+
         </div>
       </div>
 
