@@ -15,6 +15,8 @@ const signInSuccess = response => {
   $('#message').text('Sign in successful!')
   $('form').trigger('reset')
   store.user = response.user
+  $('#authorized').show()
+  $('#unauthorized').hide()
 }
 
 const signInFailure = error => {
