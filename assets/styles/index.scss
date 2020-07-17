@@ -47,5 +47,13 @@ p {
 }
 
 #unauthorized {
-  justify-content: center;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  &form {
+  width: 100%;
+  }
+
 }
