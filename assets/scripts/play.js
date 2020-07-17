@@ -13,20 +13,33 @@ const onTakeTurn = event => {
       cellPlayed.setAttribute('data-isOpen', 'no')
       isOver(cells)
       turn++
+
+      const game = {
+        cell: {
+          index: cellIndex,
+          value: 'x'
+        },
+        over: over
+      }
+      console.log(game)
+      return game
     } else {
       $(cellPlayed).html('<h1>O</h1>')
       cells[cellIndex] = 'o'
       cellPlayed.setAttribute('data-isOpen', 'no')
       isOver(cells)
       turn++
+      const game = {
+        cell: {
+          index: cellIndex,
+          value: 'o'
+        },
+        over: over
+      }
+      console.log(game)
+      return game
     }
   }
-  const game = {
-    cells: cells,
-    over: over
-  }
-  console.log(game)
-  return game
 }
 
 const isOver = cells => {
