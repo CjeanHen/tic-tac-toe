@@ -43,7 +43,7 @@ const newGame = function () {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    body: {},
+    data: {},
     url: config.apiUrl + '/games',
     method: 'POST'
   })
@@ -54,9 +54,19 @@ const takeTurn = function (game) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/games/' + store.game.id,
-    body: game,
+    url: config.apiUrl + '/games/' + store.game._id,
+    data: game,
     method: 'PATCH'
+  })
+}
+
+const gamesPlayed = function () {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/games',
+    method: 'GET'
   })
 }
 
@@ -66,5 +76,6 @@ module.exports = {
   changePw,
   signOut,
   newGame,
-  takeTurn
+  takeTurn,
+  gamesPlayed
 }

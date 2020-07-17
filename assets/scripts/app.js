@@ -14,6 +14,7 @@ $(() => {
   $('#change-pw').on('submit', authEvents.onChangePw)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#new-game').on('click', authEvents.onNewGame)
+  $('#games-played').on('click', authEvents.onGamesPlayed)
 
   // Game listeners
   $('.cells').on('click', playEvents.onTakeTurn)

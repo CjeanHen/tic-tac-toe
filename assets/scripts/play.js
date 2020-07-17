@@ -34,6 +34,10 @@ const onTakeTurn = event => {
       game.cell.value = 'o'
     }
   } console.log(game)
+
+  api.takeTurn(game)
+    .then(ui.takeTurnSuccess)
+    .catch(ui.takeTurnFailure)
 }
 
 const isOver = cells => {

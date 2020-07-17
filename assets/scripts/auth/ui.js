@@ -49,8 +49,10 @@ const changePwFailure = error => {
 }
 
 const newGameSuccess = response => {
+  console.log(response)
   $('#gameBoard').css('visibility', 'visible')
-  $('#auth-choices').hide()
+  $('#new-game').hide()
+  $('#change-pw').hide()
   store.game = response.game
 }
 
@@ -64,7 +66,16 @@ const takeTurnSuccess = response => {
 
 const takeTurnFailure = error => {
   console.log(error)
-  $('#message').text('Turn not registered!')
+  $('#message').text('Turn not logged')
+}
+
+const gamesPlayedSuccess = response => {
+  $('#display-games').text(response.games.length)
+}
+
+const gamesPlayedFailure = error => {
+  console.log(error)
+  $('#display-games').text('Cannot display games played')
 }
 
 module.exports = {
@@ -79,5 +90,7 @@ module.exports = {
   newGameSuccess,
   newGameFailure,
   takeTurnSuccess,
-  takeTurnFailure
+  takeTurnFailure,
+  gamesPlayedSuccess,
+  gamesPlayedFailure
 }

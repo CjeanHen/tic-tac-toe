@@ -44,11 +44,16 @@ const onSignOut = event => {
 }
 
 const onNewGame = event => {
-  event.preventDefault()
 
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
+}
+
+const onGamesPlayed = event => {
+  api.gamesPlayed()
+    .then(ui.gamesPlayedSuccess)
+    .catch(ui.gamesPlayedFailure)
 }
 
 module.exports = {
@@ -56,5 +61,6 @@ module.exports = {
   onSignIn,
   onChangePw,
   onSignOut,
-  onNewGame
+  onNewGame,
+  onGamesPlayed
 }
