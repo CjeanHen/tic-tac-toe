@@ -84,5 +84,5 @@ module.exports = {
   signOut,
   newGame,
   takeTurn,
-  gamesPlayed,
+  gamesPlayed
 }

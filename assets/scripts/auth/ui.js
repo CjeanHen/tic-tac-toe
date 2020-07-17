@@ -1,5 +1,4 @@
 const store = require('../store')
-const play = require('../play')
 
 const signUpSuccess = response => {
   $('#message').text('Sign up successful!')
@@ -51,7 +50,7 @@ const newGameSuccess = response => {
   store.game = response.game
   $('.cells').html('<p> </p>')
   $('.cells').attr('data-isOpen', 'yes')
-  play.over = false
+  console.log(response)
 }
 
 const newGameFailure = response => {
@@ -59,6 +58,7 @@ const newGameFailure = response => {
 }
 
 const takeTurnSuccess = response => {
+  store.game = response.game
   console.log(response)
 }
 
