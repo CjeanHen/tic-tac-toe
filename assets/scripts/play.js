@@ -3,7 +3,6 @@ const ui = require('./auth/ui')
 
 let turn = 1
 const cells = ['', '', '', '', '', '', '', '', '']
-let over = false
 const turnData = {
   cell: {}
 }

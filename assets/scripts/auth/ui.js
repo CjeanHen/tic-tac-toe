@@ -1,12 +1,12 @@
 const store = require('../store')
+const play = require('../play')
 
 const signUpSuccess = response => {
   $('#message').text('Sign up successful!')
   $('form').trigger('reset')
 }
 
-const signUpFailure = error => {
-  console.log(error)
+const signUpFailure = response => {
   $('#message').text('Sign up failed!')
   $('form').trigger('reset')
 }
@@ -18,8 +18,7 @@ const signInSuccess = response => {
   $('#unauthorized').hide()
 }
 
-const signInFailure = error => {
-  console.log(error)
+const signInFailure = response => {
   $('#message').text('Sign in failed!')
   $('form').trigger('reset')
 }
@@ -31,8 +30,7 @@ const signOutSuccess = response => {
   $('#authorized').hide()
 }
 
-const signOutFailure = error => {
-  console.log(error)
+const signOutFailure = response => {
   $('#message').text('Could not sign out!')
   $('form').trigger('reset')
 }
@@ -42,30 +40,29 @@ const changePwSuccess = response => {
   $('form').trigger('reset')
 }
 
-const changePwFailure = error => {
-  console.log(error)
+const changePwFailure = response => {
   $('#message').text('Password could not be changed!')
   $('form').trigger('reset')
 }
 
 const newGameSuccess = response => {
-  console.log('THIS IS THE NEW GAME', response)
   $('#gameBoard').css('visibility', 'visible')
-  $('#new-game').hide()
   $('#change-pw').hide()
   store.game = response.game
+  $('.cells').html('<p> </p>')
+  $('.cells').attr('data-isOpen', 'yes')
+  play.over = false
 }
 
-const newGameFailure = error => {
-  $('#message').text(error)
+const newGameFailure = response => {
+  $('#message').text('No new game created')
 }
 
 const takeTurnSuccess = response => {
-  $('#message').text('Next player!')
+  console.log(response)
 }
 
-const takeTurnFailure = error => {
-  console.log(error)
+const takeTurnFailure = response => {
   $('#message').text('Turn not logged')
 }
 
@@ -73,8 +70,7 @@ const gamesPlayedSuccess = response => {
   $('#display-games').text(response.games.length)
 }
 
-const gamesPlayedFailure = error => {
-  console.log(error)
+const gamesPlayedFailure = response => {
   $('#display-games').text('Cannot display games played')
 }
 

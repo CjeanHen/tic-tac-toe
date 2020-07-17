@@ -44,7 +44,6 @@ const onSignOut = event => {
 }
 
 const onNewGame = event => {
-
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)

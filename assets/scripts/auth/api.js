@@ -72,7 +72,7 @@ const gamesPlayed = function () {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games?over=true',
     method: 'GET'
   })
 }
@@ -84,5 +84,5 @@ module.exports = {
   signOut,
   newGame,
   takeTurn,
-  gamesPlayed
+  gamesPlayed,
 }
