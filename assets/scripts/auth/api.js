@@ -49,10 +49,22 @@ const newGame = function () {
   })
 }
 
+const takeTurn = function (game) {
+  return $.ajax({
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    url: config.apiUrl + '/games/' + store.game.id,
+    body: game,
+    method: 'PATCH'
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePw,
   signOut,
-  newGame
+  newGame,
+  takeTurn
 }

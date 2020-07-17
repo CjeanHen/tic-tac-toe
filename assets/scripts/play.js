@@ -21,7 +21,6 @@ const onTakeTurn = event => {
         },
         over: over
       }
-      console.log(game)
       return game
     } else {
       $(cellPlayed).html('<h1>O</h1>')
@@ -36,7 +35,6 @@ const onTakeTurn = event => {
         },
         over: over
       }
-      console.log(game)
       return game
     }
   }

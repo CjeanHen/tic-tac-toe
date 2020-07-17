@@ -51,10 +51,20 @@ const changePwFailure = error => {
 const newGameSuccess = response => {
   $('#gameBoard').css('visibility', 'visible')
   $('#auth-choices').hide()
+  store.game = response.game
 }
 
 const newGameFailure = error => {
   $('#message').text(error)
+}
+
+const takeTurnSuccess = response => {
+  $('#message').text('Next player!')
+}
+
+const takeTurnFailure = error => {
+  console.log(error)
+  $('#message').text('Turn not registered!')
 }
 
 module.exports = {
@@ -67,5 +77,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  takeTurnSuccess,
+  takeTurnFailure
 }
