@@ -49,7 +49,7 @@ const changePwFailure = error => {
 }
 
 const newGameSuccess = response => {
-  console.log(response)
+  console.log('THIS IS THE NEW GAME', response)
   $('#gameBoard').css('visibility', 'visible')
   $('#new-game').hide()
   $('#change-pw').hide()

@@ -50,6 +50,13 @@ const newGame = function () {
 }
 
 const takeTurn = function (game) {
+  game = {
+    game: {
+      cell: game.cell,
+      over: game.over
+    }
+  }
+  console.log(game)
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token

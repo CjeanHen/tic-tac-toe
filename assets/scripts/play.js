@@ -1,19 +1,16 @@
 const api = require('./auth/api.js')
 const ui = require('./auth/ui')
 
-
 let turn = 1
 const cells = ['', '', '', '', '', '', '', '', '']
 let over = false
+const turnData = {
+  cell: {}
+}
 
 const onTakeTurn = event => {
   const cellPlayed = event.target
   const cellIndex = parseInt(cellPlayed.getAttribute('data-cell'))
-  const game = {
-    cell: {
-    },
-    over: over
-  }
 
   if (!over && cellPlayed.getAttribute('data-isOpen') === 'yes') {
     if (turn % 2 === 1) {
@@ -22,20 +19,22 @@ const onTakeTurn = event => {
       cellPlayed.setAttribute('data-isOpen', 'no')
       isOver(cells)
       turn++
-      game.cell.index = cellIndex
-      game.cell.value = 'x'
+      turnData.cell.index = cellIndex
+      turnData.cell.value = 'x'
+      turnData.over = over
     } else {
       $(cellPlayed).html('<h1>O</h1>')
       cells[cellIndex] = 'o'
       cellPlayed.setAttribute('data-isOpen', 'no')
       isOver(cells)
       turn++
-      game.cell.index = cellIndex
-      game.cell.value = 'o'
+      turnData.cell.index = cellIndex
+      turnData.cell.value = 'o'
+      turnData.over = over
     }
-  } console.log(game)
+  }
 
-  api.takeTurn(game)
+  api.takeTurn(turnData)
     .then(ui.takeTurnSuccess)
     .catch(ui.takeTurnFailure)
 }
