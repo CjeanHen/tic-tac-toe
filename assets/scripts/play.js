@@ -88,7 +88,7 @@ const isOver = cells => {
     over = true
   } else if ((cells[0] === cells[4] && cells[4] === cells[8]) && (cells[0] === 'x' || cells[0] === 'o')) {
     over = true
-  } else if ((cells[2] === cells[4] && cells[4] === cells[3]) && (cells[2] === 'x' || cells[2] === 'o')) {
+  } else if ((cells[2] === cells[4] && cells[4] === cells[6]) && (cells[2] === 'x' || cells[2] === 'o')) {
     over = true
   }
 }
