@@ -10,17 +10,9 @@ const playEvents = require('./play')
 $(() => {
   // AUTH listeners
   $('#sign-up').on('submit', authEvents.onSignUp)
-
   $('#sign-in').on('submit', authEvents.onSignIn)
-
   $('#change-pw').on('submit', authEvents.onChangePw)
-
   $('#sign-out').on('click', authEvents.onSignOut)
-
-  // $('#new-game').on('click', () => {
-  //   $('#gameBoard').css('visibility', 'visible')
-  //   $('#auth-choices').hide()
-  // })
   $('#new-game').on('click', authEvents.onNewGame)
 
   // Game listeners

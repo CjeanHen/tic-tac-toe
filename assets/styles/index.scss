@@ -37,6 +37,12 @@ p {
     margin: 10px auto;
     visibility: hidden;
     width: 75%;
+
+    .cells {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 

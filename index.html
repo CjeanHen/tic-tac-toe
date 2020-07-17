@@ -15,8 +15,10 @@
       <h1>Tic-Tac-Toe</h1>
 
       <p id="message"></p>
+
       <div id="auth">
         <div id ="unauthorized">
+
           <form id="sign-up">
             <input name="credentials[email]" type="email" placeholder="email">
             <input name="credentials[password]" type="password" placeholder="password">
@@ -46,15 +48,15 @@
 
           <main>
             <div id="gameBoard">
-              <div class="cells" id=”topLeft0”><p> </p></div>
-              <div class="cells" id=”topCenter1”><p> </p></div>
-              <div class="cells" id=”topRight2”><p> </p></div>
-              <div class="cells" id=”middleLeft3”><p> </p></div>
-              <div class="cells" id=”middleCenter4”><p> </p></div>
-              <div class="cells" id=”middleRight5”><p> </p></div>
-              <div class="cells" id=”bottomLeft6”><p> </p></div>
-              <div class="cells" id=”bottomCenter7”><p> </p></div>
-              <div class="cells" id=”bottomRight8”><p> </p></div>
+              <div class="cells" id=”topLeft” data-isOpen = "yes" data-cell="0"><p> </p></div>
+              <div class="cells" id=”topCenter” data-isOpen = "yes" data-cell="1"><p> </p></div>
+              <div class="cells" id=”topRight” data-isOpen = "yes" data-cell="2"><p> </p></div>
+              <div class="cells" id=”middleLeft” data-isOpen = "yes" data-cell="3"><p> </p></div>
+              <div class="cells" id=”middleCenter” data-isOpen = "yes" data-cell="4"><p> </p></div>
+              <div class="cells" id=”middleRight” data-isOpen = "yes" data-cell="5"><p> </p></div>
+              <div class="cells" id=”bottomLeft” data-isOpen = "yes" data-cell="6"><p> </p></div>
+              <div class="cells" id=”bottomCenter” data-isOpen = "yes" data-cell="7"><p> </p></div>
+              <div class="cells" id=”bottomRight” data-isOpen = "yes" data-cell="8"><p> </p></div>
             </div>
         </main>
         </div>
