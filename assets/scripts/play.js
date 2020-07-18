@@ -2,7 +2,6 @@ const api = require('./auth/api.js')
 const ui = require('./auth/ui')
 const store = require('./store')
 
-// const cells = ['', '', '', '', '', '', '', '', '']
 const onTakeTurn = event => {
   const turn = store.game.__v
   const turnData = {
@@ -34,7 +33,6 @@ const onTakeTurn = event => {
       turnData.cell.index = cellIndex
       turnData.cell.value = 'o'
     }
-    console.log(cells)
   }
 
   api.takeTurn(turnData)
@@ -44,44 +42,20 @@ const onTakeTurn = event => {
 
 const isOver = cells => {
   if ((cells[0] === cells[1] && cells[1] === cells[2]) && (cells[0] === 'x' || cells[0] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[3] === cells[4] && cells[4] === cells[5]) && (cells[3] === 'x' || cells[3] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[6] === cells[7] && cells[7] === cells[8]) && (cells[6] === 'x' || cells[6] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[0] === cells[3] && cells[3] === cells[6]) && (cells[0] === 'x' || cells[0] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[1] === cells[4] && cells[4] === cells[7]) && (cells[1] === 'x' || cells[1] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[2] === cells[5] && cells[5] === cells[8]) && (cells[2] === 'x' || cells[2] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[0] === cells[4] && cells[4] === cells[8]) && (cells[0] === 'x' || cells[0] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   } else if ((cells[2] === cells[4] && cells[4] === cells[6]) && (cells[2] === 'x' || cells[2] === 'o')) {
-    for (let i = 0; i < cells.length; i++) {
-      cells[i] = ''
-    }
     return true
   }
   console.log('IS OVER', cells)
