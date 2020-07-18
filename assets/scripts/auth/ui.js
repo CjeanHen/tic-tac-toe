@@ -50,7 +50,6 @@ const newGameSuccess = response => {
   store.game = response.game
   $('.cells').html('<p> </p>')
   $('.cells').attr('data-isOpen', 'yes')
-  console.log(response)
 }
 
 const newGameFailure = response => {
@@ -59,7 +58,10 @@ const newGameFailure = response => {
 
 const takeTurnSuccess = response => {
   store.game = response.game
-  console.log(response)
+  $('#message').text('Now it is time for player ' + store.game.__v)
+  if (store.game.over === true) {
+    $('#message').text('Game over!')
+  }
 }
 
 const takeTurnFailure = response => {

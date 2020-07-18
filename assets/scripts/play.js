@@ -58,7 +58,6 @@ const isOver = cells => {
   } else if ((cells[2] === cells[4] && cells[4] === cells[6]) && (cells[2] === 'x' || cells[2] === 'o')) {
     return true
   }
-  console.log('IS OVER', cells)
 }
 
 module.exports = {
