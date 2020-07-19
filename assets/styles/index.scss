@@ -4,14 +4,8 @@ body {
   background-color: #73C094;
 }
 
-button {
-  background-color: #E24B6C;
-  color: #140E2A;
-  border-radius: 10%;
-}
-
 h1 {
-  color: #140E2A;
+  color: #707070;
   text-align: center;
 }
 
@@ -20,10 +14,11 @@ p {
 }
 
 .cells {
-  width: calc(100% / 3);
+  border: 5px solid #CDCDCD;
   height: calc(100% / 3);
-  border: 5px solid #140E2A
+  width: calc(100% / 3);
 }
+
 
 #authorized {
   display: none;
@@ -44,16 +39,4 @@ p {
       align-items: center;
     }
   }
-}
-
-#unauthorized {
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-
-  &form {
-  width: 100%;
-  }
-
 }

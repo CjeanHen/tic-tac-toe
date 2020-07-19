@@ -16,36 +16,72 @@
 
       <p id="message"></p>
 
-      <div id="auth">
-        <div id ="unauthorized">
-
-          <form id="sign-up">
-            <input name="credentials[email]" type="email" placeholder="email">
-            <input name="credentials[password]" type="password" placeholder="password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
-            <button type="submit">Sign up!</button>
-          </form>
-
-          <form id="sign-in">
-            <input name="credentials[email]" type="email" placeholder="email">
-            <input name="credentials[password]" type="password"  placeholder="password">
-            <button type="submit">Sign in</button>
-          </form>
-        </div>
-
-        <div id="authorized">
-          <div id="auth-choices">
-            <button id="new-game">New Game</button>
-
-            <form id="change-pw">
-              <button type="submit">Change password</button>
-              <input name="passwords[old]" type="password" placeholder="old password">
-              <input name="passwords[new]" type="password" placeholder="new password">
-            </form>
-            <button id="games-played">Total Games</button>
-            <p id="display-games"></p>
-            <button id="sign-out">Sign out</button>
+      <div class="container">
+        <div id="unauthorized">
+          <div class="row d-flex justify-content-center">
+            <div class="col-6">
+              <form id="sign-up">
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input class="form-control" name="credentials[email]" type="email" placeholder="email">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input class="form-control" name="credentials[password]" type="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Confirm password: </label>
+                  <input class="form-control" name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+                </div>
+                <button class="btn btn-primary btn-block" type="submit">Sign up!</button>
+              </form>
+            </div>
           </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-6">
+            <form id="sign-in">
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" name="credentials[email]" type="email" placeholder="email">
+              </div>
+              <div class="form-group">
+                <label for='pwd'>Password</label>
+                <input class="form-control" name="credentials[password]" type="password"  placeholder="password">
+              </div>
+                <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div class="container" id="authorized">
+          <div id="auth-choices">
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary btn-block" id="new-game">New Game</button>
+              </div>
+              <div class="col-6">
+                <form class="form-inline" id="change-pw">
+                  <div class="form-group">
+                    <input class="form-inline" name="passwords[old]" type="password" placeholder="old password">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-inline" name="passwords[new]" type="password" placeholder="new password">
+                  </div>
+                  <button class="btn btn-secondary" type="submit">Change password</button>
+                </form>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-secondary btn-block" id="games-played">Total Games</button>
+              </div>
+            <h2 id="display-games"></h2>
+            <div class="col-2">
+              <button class="btn btn-danger btn-block" id="sign-out">Sign out</button>
+            </div>
+          </div>
+        </div>
 
           <main>
             <div id="gameBoard">
@@ -61,7 +97,5 @@
             </div>
         </main>
         </div>
-      </div>
-
     </body>
 </html>
