@@ -12,6 +12,7 @@ const signUpFailure = response => {
 
 const signInSuccess = response => {
   $('form').trigger('reset')
+  $('#message').text('Welcome back!')
   store.user = response.user
   $('#authorized').show()
   $('#unauthorized').hide()
@@ -27,6 +28,7 @@ const signOutSuccess = response => {
   $('form').trigger('reset')
   $('#unauthorized').show()
   $('#authorized').hide()
+  $('#display-games').hide()
 }
 
 const signOutFailure = response => {
@@ -48,6 +50,7 @@ const newGameSuccess = response => {
   $('#gameBoard').css('visibility', 'visible')
   $('#change-pw').hide()
   store.game = response.game
+  $('#message').text('X, take your turn')
   $('.cells').html('<p> </p>')
   $('.cells').attr('data-isOpen', 'yes')
 }
@@ -58,7 +61,11 @@ const newGameFailure = response => {
 
 const takeTurnSuccess = response => {
   store.game = response.game
-  $('#message').text('Now it is time for player ' + store.game.__v)
+  if (store.game.__v % 2 === 1) {
+    $('#message').text('O, take your tun')
+  } else {
+    $('#message').text('X, take your turn')
+  }
   if (store.game.over === true) {
     $('#message').text('Game over!')
   }
