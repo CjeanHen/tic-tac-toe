@@ -68,6 +68,7 @@ const takeTurnSuccess = response => {
   }
   if (store.game.over === true) {
     $('#message').text('Game over!')
+    $('#change-pw').show()
   }
 }
 
