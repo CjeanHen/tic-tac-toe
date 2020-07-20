@@ -50,7 +50,7 @@ const newGameSuccess = response => {
   $('#gameBoard').css('visibility', 'visible')
   $('#change-pw').hide()
   store.game = response.game
-  $('#message').text('X, take your turn')
+  $('#message').text('X take your turn')
   $('.cells').html('<p> </p>')
   $('.cells').attr('data-isOpen', 'yes')
 }
@@ -62,13 +62,17 @@ const newGameFailure = response => {
 const takeTurnSuccess = response => {
   store.game = response.game
   if (store.game.__v % 2 === 1) {
-    $('#message').text('O, take your tun')
+    $('#message').text('O take your tun')
   } else {
-    $('#message').text('X, take your turn')
+    $('#message').text('X take your turn')
   }
   if (store.game.over === true) {
-    $('#message').text('Game over!')
     $('#change-pw').show()
+    if (store.game.__v % 2 === 1) {
+      $('#message').text('Game over! X won')
+    } else {
+      $('#message').text('Game over! O won')
+    }
   }
 }
 
