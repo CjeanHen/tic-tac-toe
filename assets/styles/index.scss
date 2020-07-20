@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: #73C094;
+  background-color: #FBFCF7;
 }
 
 h1 {
@@ -19,6 +19,9 @@ p {
   width: calc(100% / 3);
 }
 
+.container {
+  border: 1px solid #CDCDCD;
+}
 
 #authorized {
   display: none;
@@ -27,16 +30,16 @@ p {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    height: 500px;
+    height: 400px;
     justify-content: center;
     margin: 10px auto;
     visibility: hidden;
     width: 75%;
 
     .cells {
+      align-items: center;
       display: flex;
       justify-content: center;
-      align-items: center;
     }
   }
 }
