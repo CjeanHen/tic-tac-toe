@@ -37,6 +37,8 @@ const onChangePw = event => {
 
 const onSignOut = event => {
   event.preventDefault()
+  api.newGame()
+    .then(ui.newGameSuccess)
 
   api.signOut()
     .then(ui.signOutSuccess)

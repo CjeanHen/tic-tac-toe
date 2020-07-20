@@ -28,7 +28,6 @@ const signOutSuccess = response => {
   $('form').trigger('reset')
   $('#unauthorized').show()
   $('#authorized').hide()
-  $('#display-games').hide()
 }
 
 const signOutFailure = response => {
@@ -61,18 +60,10 @@ const newGameFailure = response => {
 
 const takeTurnSuccess = response => {
   store.game = response.game
-  if (store.game.__v % 2 === 1) {
-    $('#message').text('O take your tun')
-  } else {
-    $('#message').text('X take your turn')
-  }
+  store.game.__v % 2 === 1 ? $('#message').text('O take your tun') : $('#message').text('X take your turn')
   if (store.game.over === true) {
     $('#change-pw').show()
-    if (store.game.__v % 2 === 1) {
-      $('#message').text('Game over! X won')
-    } else {
-      $('#message').text('Game over! O won')
-    }
+    store.game.__v % 2 === 1 ? $('#message').text('Game over! X won') : $('#message').text('Game over! O won')
   }
 }
 
