@@ -60,7 +60,6 @@ const newGameFailure = response => {
 }
 
 const takeTurnSuccess = response => {
-  console.log(response)
   store.game = response.game
   store.game.__v % 2 === 1 ? $('#message').text('O take your tun') : $('#message').text('X take your turn')
   if (store.game.over === true) {
