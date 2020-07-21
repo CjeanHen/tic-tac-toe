@@ -15,6 +15,7 @@ const signInSuccess = response => {
   $('#message').text('Welcome back!')
   store.user = response.user
   $('#authorized').show()
+  $('.navbar').toggleClass('d-none')
   $('#unauthorized').hide()
 }
 
@@ -28,6 +29,7 @@ const signOutSuccess = response => {
   $('form').trigger('reset')
   $('#unauthorized').show()
   $('#authorized').hide()
+  $('.navbar').toggleClass('d-none')
 }
 
 const signOutFailure = response => {
@@ -47,7 +49,6 @@ const changePwFailure = response => {
 
 const newGameSuccess = response => {
   $('#gameBoard').css('visibility', 'visible')
-  $('#change-pw').hide()
   store.game = response.game
   $('#message').text('X take your turn')
   $('.cells').html('<p> </p>')
@@ -68,7 +69,7 @@ const takeTurnSuccess = response => {
 }
 
 const takeTurnFailure = response => {
-  $('#message').text('Turn not logged')
+  $('#message').text('Click "New Game" to play again')
 }
 
 const gamesPlayedSuccess = response => {
