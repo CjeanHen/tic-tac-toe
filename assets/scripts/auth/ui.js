@@ -60,11 +60,16 @@ const newGameFailure = response => {
 }
 
 const takeTurnSuccess = response => {
+  console.log(response)
   store.game = response.game
   store.game.__v % 2 === 1 ? $('#message').text('O take your tun') : $('#message').text('X take your turn')
   if (store.game.over === true) {
     $('#change-pw').show()
     store.game.__v % 2 === 1 ? $('#message').text('Game over! X won') : $('#message').text('Game over! O won')
+  }
+  if (store.game.__v === 9 && store.game.over === false) {
+    $('#message').text('Game over! Tie')
+    store.game.over = true
   }
 }
 
