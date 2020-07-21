@@ -12,7 +12,7 @@ const signUpFailure = response => {
 
 const signInSuccess = response => {
   $('form').trigger('reset')
-  $('#message').text('Welcome back!')
+  $('#message').text('Click "New Game" to begin!')
   store.user = response.user
   $('#authorized').show()
   $('.navbar').toggleClass('d-none')
@@ -69,7 +69,6 @@ const takeTurnSuccess = response => {
   }
   if (store.game.__v === 9 && store.game.over === false) {
     $('#message').text('Game over! Tie')
-    store.game.over = true
   }
 }
 
