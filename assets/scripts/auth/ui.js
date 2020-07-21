@@ -69,6 +69,7 @@ const takeTurnSuccess = response => {
   }
   if (store.game.__v === 9 && store.game.over === false) {
     $('#message').text('Game over! Tie')
+    store.game.over = true
   }
 }
 
