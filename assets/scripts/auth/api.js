@@ -56,7 +56,6 @@ const takeTurn = function (game) {
       over: game.over
     }
   }
-  console.log(game)
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
