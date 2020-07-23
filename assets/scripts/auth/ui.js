@@ -64,7 +64,9 @@ const takeTurnSuccess = response => {
   store.game.__v % 2 === 1 ? $('#message').text('O take your tun') : $('#message').text('X take your turn')
   if (store.game.over === true) {
     $('#change-pw').show()
-    store.game.__v % 2 === 1 ? $('#message').text('Game over! X won') : $('#message').text('Game over! O won')
+    $('#message').text('Game over! Click New Game to play again')
+    store.game.__v % 2 === 1 ? $('#winner-message').text('X won this time.') : $('#winner-message').text('O won this time.')
+    $('#winner').modal('show')
   }
   if (store.game.__v === 9 && store.game.over === false) {
     $('#message').text('Game over! Tie')
