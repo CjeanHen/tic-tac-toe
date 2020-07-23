@@ -73,7 +73,11 @@ const takeTurnSuccess = response => {
 }
 
 const takeTurnFailure = response => {
-  $('#message').text('Click "New Game" to play again')
+  if (store.game.over === true) {
+    $('#message').text('Click "New Game" to play again')
+  } else {
+    $('#message').text('Please click on an open cell')
+  }
 }
 
 const gamesPlayedSuccess = response => {
